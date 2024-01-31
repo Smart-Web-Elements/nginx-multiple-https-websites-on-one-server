@@ -1,0 +1,13 @@
+[
+  {
+    "id": "update",
+    "response-message": "Updating...",
+    "execute-command": "/etc/webhook/data/update.sh",
+    "pass-arguments-to-command": [
+      {
+        "source": "url",
+        "name": "url"
+      }
+    ]
+  }
+]
