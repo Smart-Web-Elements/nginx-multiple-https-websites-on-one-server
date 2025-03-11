@@ -1,13 +1,10 @@
 services:
   webhook:
     build: .
-    environment:
-      - VIRTUAL_HOST=webhook-server.s-w-e.com
-      - VIRTUAL_PORT=9000
-      - LETSENCRYPT_HOST=webhook-server.s-w-e.com
-      - LETSENCRYPT_EMAIL=info@s-w-e.com
+    restart: unless-stopped
+    env_file: .env
     volumes:
-      - /home/luca/.docker:/root/.docker
+      - /root/.docker:/root/.docker
       - /srv/www/webhook/data:/etc/webhook/data:ro
       - /srv/www/websites:/etc/webhook/websites
       - /var/run/docker.sock:/var/run/docker.sock

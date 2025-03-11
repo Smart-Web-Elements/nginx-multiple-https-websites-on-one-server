@@ -1,0 +1,15 @@
+services:
+  website:
+    image: ghcr.io/smart-web-elements/customer-nuxt:latest
+    restart: unless-stopped
+    container_name: customer-website
+    volumes:
+      - ./logs:/app/logs
+    env_file: .env
+    networks:
+      - default
+
+networks:
+  default:
+    name: nginx-proxy
+    external: true

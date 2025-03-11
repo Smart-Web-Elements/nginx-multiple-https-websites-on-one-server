@@ -620,6 +620,9 @@ server {
         {{- end }}
     {{- end }}
 
+    # Setzt die max groesse für Upload-Dateien, Standard sind 1MB.
+    client_max_body_size 100M;
+
     {{- if (exists (printf "/etc/nginx/vhost.d/%s" $host)) }}
     include {{ printf "/etc/nginx/vhost.d/%s" $host }};
     {{- else if (exists "/etc/nginx/vhost.d/default") }}

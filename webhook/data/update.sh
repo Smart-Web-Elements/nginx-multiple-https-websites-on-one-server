@@ -8,3 +8,6 @@ if [ -d "./websites/${url}" ]; then
   docker compose pull
   docker compose up -d
 fi
+
+cd ../..
+./cleanup.sh
