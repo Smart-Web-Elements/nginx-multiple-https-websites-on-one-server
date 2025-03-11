@@ -5,8 +5,8 @@ services:
     env_file: .env
     volumes:
       - /root/.docker:/root/.docker
-      - /srv/www/webhook/data:/etc/webhook/data:ro
-      - /srv/www/websites:/etc/webhook/websites
+      - /var/www/docker_sites/webhook/data:/etc/webhook/data:ro
+      - /var/www/docker_sites/websites:/etc/webhook/websites
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker/image:/var/lib/docker/image
       - /var/lib/docker/overlay2:/var/lib/docker/overlay2
